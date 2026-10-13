@@ -1,0 +1,371 @@
+/* Villa settings — compact portfolio cards */
+.villa-settings-kpis {
+  margin-bottom: var(--dash-space-3);
+}
+
+.villa-portfolio-card {
+  overflow: hidden;
+}
+
+.villa-portfolio-card__layout {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .villa-portfolio-card__layout {
+    flex-direction: row;
+    min-height: 11.5rem;
+  }
+}
+
+.villa-portfolio-card__media {
+  position: relative;
+  height: 9rem;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 768px) {
+  .villa-portfolio-card__media {
+    height: auto;
+    width: 11rem;
+    min-height: 11.5rem;
+  }
+}
+
+.villa-portfolio-card__body {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--dash-space-2);
+  padding: var(--dash-space-3);
+}
+
+@media (min-width: 768px) {
+  .villa-portfolio-card__body {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.villa-portfolio-card__identity {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--dash-space-2);
+}
+
+.villa-portfolio-card__title {
+  font-family: var(--font-philosopher), serif;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--dash-text);
+}
+
+.villa-portfolio-card__slug {
+  font-family: ui-monospace, monospace;
+  font-size: 0.6875rem;
+  color: var(--dash-text-muted);
+}
+
+.villa-portfolio-card__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.villa-portfolio-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.villa-portfolio-card__spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--dash-border);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.6875rem;
+  color: var(--dash-text-secondary);
+}
+
+.villa-portfolio-card__rates {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--dash-space-2);
+  border-top: 1px solid var(--dash-border);
+  padding-top: var(--dash-space-2);
+}
+
+@media (min-width: 768px) {
+  .villa-portfolio-card__rates {
+    width: 12.5rem;
+    flex-shrink: 0;
+    border-top: none;
+    border-left: 1px solid var(--dash-border);
+    padding-top: 0;
+    padding-left: var(--dash-space-3);
+  }
+}
+
+.villa-portfolio-card__rate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--dash-space-2);
+}
+
+.villa-portfolio-card__rate {
+  padding: var(--dash-space-2);
+  border: 1px solid var(--dash-border);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.villa-portfolio-card__rate--stay {
+  border-color: rgba(239, 205, 98, 0.25);
+  background: rgba(239, 205, 98, 0.06);
+}
+
+.villa-portfolio-card__rate-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dash-text-muted);
+}
+
+.villa-portfolio-card__rate-value {
+  margin-top: 0.15rem;
+  font-family: var(--font-philosopher), serif;
+  font-size: 1.05rem;
+  line-height: 1.1;
+  color: var(--dash-text);
+}
+
+.villa-portfolio-card__rate-hint {
+  margin-top: 0.15rem;
+  font-size: 0.625rem;
+  color: var(--dash-text-muted);
+}
+
+.villa-portfolio-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.villa-settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-space-3);
+}
+
+/* Villa Quick Edit / Full Editor form primitives */
+.villa-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-space-4);
+  border: 1px solid var(--dash-border);
+  border-radius: var(--dash-radius-sm, 2px);
+  background: rgba(255, 255, 255, 0.02);
+  padding: var(--dash-space-4);
+  box-shadow: var(--dash-glass-inset);
+}
+
+.villa-form-section--compact {
+  gap: var(--dash-space-3);
+  padding: var(--dash-space-3);
+}
+
+.villa-form-section__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--dash-space-3);
+  padding-bottom: var(--dash-space-2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.villa-form-section__title {
+  font-family: var(--dash-font-display, "Philosopher", serif);
+  font-size: var(--dash-fs-h3, 1.125rem);
+  color: var(--dash-text);
+  line-height: 1.25;
+}
+
+.villa-form-section__desc {
+  margin-top: 0.35rem;
+  font-family: var(--dash-font-ui);
+  font-size: var(--dash-fs-small);
+  line-height: 1.45;
+  color: var(--dash-text-muted);
+}
+
+.villa-form-section__badge {
+  flex-shrink: 0;
+  border: 1px solid var(--dash-accent-border);
+  background: var(--dash-accent-muted);
+  padding: 0.2rem 0.55rem;
+  font-family: var(--dash-font-ui);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dash-accent);
+}
+
+.villa-form-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dash-space-3);
+}
+
+.villa-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.villa-form-field__hint {
+  margin: 0;
+  font-family: var(--dash-font-ui);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--dash-text-subtle);
+}
+
+.villa-form-grid--3 {
+  display: grid;
+  gap: var(--dash-space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .villa-form-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .villa-form-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.villa-form-toggle {
+  display: flex;
+  cursor: pointer;
+  align-items: flex-start;
+  gap: var(--dash-space-3);
+  border: 1px solid var(--dash-border);
+  background: rgba(0, 0, 0, 0.22);
+  padding: var(--dash-space-3);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.villa-form-toggle:hover:not(.villa-form-toggle--disabled) {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.villa-form-toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.villa-form-toggle__input {
+  margin-top: 0.15rem;
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  accent-color: var(--dash-accent);
+}
+
+.villa-form-toggle__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.villa-form-toggle__label {
+  font-family: var(--dash-font-ui);
+  font-size: var(--dash-fs-body);
+  font-weight: 600;
+  color: var(--dash-text);
+}
+
+.villa-form-toggle__desc {
+  font-family: var(--dash-font-ui);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--dash-text-muted);
+}
+
+.villa-form-notice {
+  border-radius: var(--dash-radius-sm, 2px);
+  padding: var(--dash-space-3);
+  font-family: var(--dash-font-ui);
+  font-size: var(--dash-fs-small);
+  line-height: 1.5;
+}
+
+.villa-form-notice--info {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.villa-form-notice--warning {
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.1);
+  color: rgba(254, 243, 199, 0.95);
+}
+
+.villa-form-notice--success {
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.1);
+  color: rgba(220, 252, 231, 0.95);
+}
+
+.villa-form-full-editor-cta {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid var(--dash-accent-border);
+  background: var(--dash-accent-muted);
+  padding: var(--dash-space-3) var(--dash-space-4);
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.villa-form-full-editor-cta:hover {
+  background: rgba(239, 205, 98, 0.14);
+  border-color: var(--dash-accent);
+}
+
+.villa-form-full-editor-cta__title {
+  font-family: var(--dash-font-ui);
+  font-size: var(--dash-fs-body);
+  font-weight: 700;
+  color: var(--dash-accent);
+}
+
+.villa-form-full-editor-cta__desc {
+  font-family: var(--dash-font-ui);
+  font-size: 0.75rem;
+  color: var(--dash-text-muted);
+}

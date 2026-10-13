@@ -1,0 +1,104 @@
+/* Calendar module — compact ops grid */
+.calendar-module {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--dash-space-2);
+}
+
+.calendar-module__panel {
+  min-height: min(52dvh, 28rem);
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--dash-space-2) var(--dash-space-3);
+  padding: var(--dash-space-2) var(--dash-space-3);
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dash-text-secondary);
+}
+
+.calendar-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.calendar-legend__swatch {
+  height: 0.65rem;
+  width: 0.65rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.calendar-toolbar-compact {
+  align-items: flex-start;
+  gap: var(--dash-space-3);
+}
+
+.calendar-toolbar-compact__actions {
+  align-items: center;
+  align-content: center;
+}
+
+.calendar-legend__chip {
+  gap: 0.35rem;
+}
+
+.calendar-toolbar-compact .dashboard-toolbar__meta {
+  min-width: 0;
+}
+
+.calendar-toolbar-compact .dashboard-toolbar__meta p:first-child {
+  font-size: 0.6875rem;
+}
+
+.calendar-toolbar-compact .dashboard-toolbar__meta p:nth-child(2) {
+  font-size: var(--dash-fs-body);
+}
+
+.calendar-window-tabs {
+  max-width: 100%;
+}
+
+.calendar-window-tabs .dash-tab-bar-scroll {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .calendar-window-tabs .dash-tab-bar__tab {
+    min-width: 2.25rem;
+    padding-inline: 0.5rem;
+    font-size: 0.625rem;
+  }
+
+  .dashboard-cal-day {
+    min-width: clamp(2rem, 8vw, 2.75rem);
+    padding: var(--dash-space-1);
+    font-size: 0.625rem;
+  }
+
+  .dashboard-cal-cell {
+    min-width: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .dashboard-cal-villa {
+    min-width: clamp(7rem, 28vw, 10.5rem);
+    max-width: clamp(7rem, 28vw, 10.5rem);
+    padding: var(--dash-space-2) var(--dash-space-3);
+  }
+
+  .dashboard-cal-cell__empty {
+    min-height: var(--dash-touch);
+    min-width: var(--dash-touch);
+  }
+}

@@ -1,0 +1,57 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/playwright-report/
+/test-results/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# generated / local scratch (e.g. audit link dumps)
+/tmp/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+/logs/
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Postman local workspace
+.postman/
+postman/
+.env*
+
+.env.vercel.production
+.env.vercel*
+
+# Deployment artifacts and editor state
+/dist/
+.vscode/
+__pycache__/
+*.pyc
+
+# Keep the sanitized environment template available in source control
+!.env.example

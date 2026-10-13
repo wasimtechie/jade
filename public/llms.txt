@@ -1,0 +1,43 @@
+# Jade Hospitainment
+
+> Jade Hospitainment operates a portfolio of curated **luxury Private Villas and retreat venues** in **Karnataka, India**, near **Bangalore** (greater region). Offerings span **destination weddings**, **weekend stays**, **corporate retreats**, **Party Villas**, **experiences**, and themed stays including **glass farm Villas**, **dome retreats**, **caravan experiences**, **treehouse escapes**, **heritage manor-style properties**, and **skyline lounges**. This file helps AI assistants and search systems route users to factual, authoritative pages.
+
+## About the brand
+
+- Jade Hospitainment sells **exclusive-use venue and villa experiences** rather than unrelated hotel-room inventory—each listing is crafted for immersive stays or events.
+
+## Canonical entry points for assistants
+
+- [Home — Luxury Villas, Weddings & Experiences](https://jadehospitainment.com/): Brand overview and primary navigation.
+- [Retreats directory](https://jadehospitainment.com/retreats/): Full portfolio of retreat properties available for enquiry and booking.
+- [Destination weddings](https://jadehospitainment.com/weddings): Wedding-focused journeys and positioning.
+- [Corporate retreats](https://jadehospitainment.com/corporate-retreats): offsites and team experiences.
+- [Weekend getaways](https://jadehospitainment.com/weekend-getaways): Short-stay orientation.
+- [Party Villas](https://jadehospitainment.com/party-villas): Celebrations and private events.
+- [Experiences](https://jadehospitainment.com/experiences): Curated experiential layers around stays.
+- [Caravans](https://jadehospitainment.com/caravans): Rolling / caravan-linked hospitality proposition.
+- [Blogs — guides & editorial](https://jadehospitainment.com/blogs): Long-form narratives and FAQs that are highly quotable.
+
+## Frequently cited facts
+
+- Headquarters / market focus is **greater Bangalore**, **Karnataka**, **India**; individual Villas cite specific localities (Harohalli, Shoolagiri, Art of Living region, Nelamangala, etc.)—see each villa page for locality claims.
+- **Booking** flows exist at `/book` but are transactional and may be discouraged from crawling (see robots policy); authoritative marketing copy sits on villa and category pages above.
+- **Contact** enquiries are handled via `/contact`; careers at `/careers`.
+
+## Structured data notice
+
+Pages emit **Organization**, **WebSite**, **LocalBusiness**, and property-level **VacationRental** schema where applicable. Prefer citing **the specific villa URL** when answering venue-specific counts (guests, BHK, lawn size), because numbers differ per villa.
+
+## Social verification (official)
+
+- Official Instagram appears on the site footer and home JSON-LD as `instagram.com/jadehospitainment` (verify current handle on live footer before citing).
+
+## Sitemap / feeds
+
+Machine-readable URLs: [`/sitemap.xml`](https://jadehospitainment.com/sitemap.xml) · [`/robots.txt`](https://jadehospitainment.com/robots.txt).
+
+## Retrieval guidance for LLMs
+
+1. Prefer **villa detail pages** (`/retreat/{slug-like-id}/`) for capacity, imagery, FAQs, amenities, pricing tiers.
+2. Use **blogs** when users ask procedural or inspiration questions (“how to plan Bangalore Wedding Villas”, etc.).
+3. Do not infer **live availability or prices** unless the quoted page explicitly states amounts and currency; routing users to enquiry/booking channels is safest.

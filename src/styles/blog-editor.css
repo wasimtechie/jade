@@ -1,0 +1,258 @@
+/* Blog document editor — dashboard only; public prose uses blog-prose.css */
+
+.blog-document-editor {
+  background: #1a1c1e;
+}
+
+.blog-editor-block {
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.blog-editor-block-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.blog-editor-block:hover .blog-editor-block-chrome,
+.blog-editor-block:focus-within .blog-editor-block-chrome {
+  opacity: 1;
+}
+
+.blog-editor-block-label {
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(239, 205, 98, 0.75);
+}
+
+.blog-editor-block-body {
+  padding: 0 0.5rem 0.75rem;
+}
+
+.blog-editor-add-between {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 100%;
+  margin: 0.15rem 0 0.5rem;
+  padding: 0.35rem;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.blog-editor-block:hover + .blog-editor-add-between,
+.blog-editor-add-between:hover {
+  opacity: 1;
+  color: rgba(239, 205, 98, 0.7);
+}
+
+.blog-rich-text .ProseMirror {
+  min-height: 1.75rem;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.blog-editor-prose p {
+  margin: 0 0 0.75rem;
+}
+
+.blog-editor-prose p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+  height: 0;
+}
+
+.blog-editor-prose h1,
+.blog-editor-prose h2,
+.blog-editor-prose h3,
+.blog-editor-prose h4,
+.blog-editor-prose h5,
+.blog-editor-prose h6 {
+  font-family: var(--font-philosopher), "Philosopher", serif;
+  color: #fff;
+  margin: 1rem 0 0.5rem;
+  line-height: 1.25;
+}
+
+.blog-editor-prose h1 { font-size: 1.75rem; }
+.blog-editor-prose h2 { font-size: 1.5rem; }
+.blog-editor-prose h3 { font-size: 1.25rem; }
+
+.blog-editor-prose blockquote {
+  border-left: 3px solid rgba(239, 205, 98, 0.5);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.blog-editor-prose ul,
+.blog-editor-prose ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.blog-editor-prose mark {
+  background: rgba(239, 205, 98, 0.35);
+  color: inherit;
+  padding: 0 0.15em;
+}
+
+.blog-editor-prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-editor-prose hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 1.5rem 0;
+}
+
+.blog-editor-prose a {
+  color: #efcd62;
+  text-decoration: underline;
+}
+
+.blog-editor-bubble {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.35rem;
+  background: #2a2d31;
+  border: 1px solid rgba(239, 205, 98, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.blog-editor-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.blog-editor-toolbar-btn:hover,
+.blog-editor-toolbar-btn.is-active {
+  background: rgba(239, 205, 98, 0.15);
+  color: #efcd62;
+}
+
+.blog-editor-bubble-sep {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.15rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.blog-slash-menu {
+  position: absolute;
+  left: 0.5rem;
+  top: 100%;
+  z-index: 40;
+  min-width: 14rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  background: #2a2d31;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.blog-slash-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.blog-slash-menu-item:hover {
+  background: rgba(239, 205, 98, 0.1);
+}
+
+.blog-editor-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0.5rem 0;
+}
+
+.blog-editor-preview-chip {
+  padding: 0.75rem;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.blog-editor-cta-preview {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.blog-editor-device-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.blog-editor-device-btn.is-active {
+  color: #efcd62;
+  border-color: rgba(239, 205, 98, 0.35);
+  background: rgba(239, 205, 98, 0.08);
+}
+
+.blog-preview-frame {
+  margin: 0 auto;
+  transition: max-width 0.25s ease;
+}
+
+.blog-preview-desktop {
+  max-width: 100%;
+}
+
+.blog-preview-tablet {
+  max-width: 48rem;
+}
+
+.blog-preview-mobile {
+  max-width: 24rem;
+}

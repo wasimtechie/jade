@@ -1,0 +1,36 @@
+# Upload application source and served assets, not local state.
+node_modules/
+.next/
+dist/
+tmp/
+images/
+.git/
+.github/
+.vscode/
+.postman/
+postman/
+coverage/
+playwright-report/
+test-results/
+e2e/
+logs/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+*.log
+*.pem
+.DS_Store
+
+# Unserved camera originals; the application uses converted images.
+**/*.CR2
+**/*.cr2
+
+# Runtime secrets must be configured in Vercel, never uploaded as source.
+.env*
+!.env.example
+
+# Tests remain in the development workspace.
+**/*.test.*
+**/*.spec.*
+vitest.config.ts
+playwright.config.ts

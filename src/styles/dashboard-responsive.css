@@ -1,0 +1,602 @@
+/**
+ * Dashboard responsive layer — mobile-first breakpoints across all modules.
+ * Imported after dashboard-polish.css.
+ */
+
+/* ── Breakpoint tokens (shell + portaled modals) ── */
+.dashboard-root,
+.dashboard-modal-overlay {
+  --dash-bp-sm: 640px;
+  --dash-bp-md: 768px;
+  --dash-bp-lg: 1024px;
+  --dash-bp-xl: 1280px;
+}
+
+/* ── Shell & page ── */
+@media (max-width: 639px) {
+  .dashboard-content {
+    padding-inline: max(0.75rem, env(safe-area-inset-left, 0px))
+      max(0.75rem, env(safe-area-inset-right, 0px));
+    padding-top: var(--dash-space-3);
+  }
+
+  .dashboard-header__inner {
+    gap: var(--dash-space-2);
+    padding-block: var(--dash-space-2);
+  }
+
+  .dashboard-header__title {
+    font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+  }
+
+  .dashboard-header__section {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+
+  .dashboard-panel--pad .dashboard-panel__body {
+    padding: var(--dash-space-3);
+  }
+}
+
+/* ── KPI strip — scroll on narrow viewports ── */
+@media (max-width: 767px) {
+  .dash-kpi-strip {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    margin-inline: calc(-1 * var(--dash-gutter));
+    padding-inline: var(--dash-gutter);
+  }
+
+  .dash-kpi-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dash-kpi {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: max(6.5rem, 34vw);
+  }
+}
+
+@media (min-width: 768px) {
+  .dash-kpi-strip {
+    flex-wrap: wrap;
+  }
+}
+
+/* ── Tab bar — horizontal scroll when cramped ── */
+.dash-tab-bar-scroll {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
+}
+
+.dash-tab-bar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.dash-tab-bar-scroll .dash-tab-bar {
+  width: max-content;
+  max-width: none;
+}
+
+/* ── Filter bar ── */
+@media (max-width: 767px) {
+  .dash-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--dash-space-2);
+    padding: var(--dash-space-2);
+  }
+
+  .dash-filter-bar__search {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .dash-filter-bar__select,
+  .dash-filter-bar .dashboard-input--compact,
+  .dash-filter-bar select {
+    width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
+  }
+
+  .dash-filter-bar__meta {
+    margin-left: 0;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .dash-filter-bar__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .dash-filter-bar .dash-tab-bar-scroll {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dash-filter-bar__search {
+    flex: 1 1 12rem;
+    max-width: none;
+  }
+}
+
+/* ── Toolbar — stack segments on small screens ── */
+@media (max-width: 767px) {
+  .dashboard-toolbar {
+    gap: var(--dash-space-2);
+  }
+
+  .dashboard-toolbar__actions {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    overflow-y: visible;
+    gap: var(--dash-space-2);
+    width: 100%;
+  }
+
+  .dashboard-toolbar__segment {
+    flex: 0 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .dashboard-toolbar__search {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .dashboard-toolbar__filters {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    border-left: none;
+    padding-left: 0;
+    flex-wrap: wrap;
+    gap: var(--dash-space-1);
+  }
+
+  .dashboard-toolbar__filters .dashboard-chip {
+    flex: 0 1 auto;
+  }
+
+  .dashboard-toolbar__nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-toolbar__search {
+    width: 9rem;
+    min-width: 9rem;
+    max-width: 12rem;
+  }
+}
+
+/* List toolbar (module top bars) */
+.dashboard-toolbar__actions--list {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  overflow-y: visible;
+  gap: var(--dash-space-2);
+}
+
+@media (max-width: 639px) {
+  .dashboard-toolbar__actions--list .dashboard-btn--text:not(.dashboard-btn--dense) {
+    display: none;
+  }
+
+  [data-shrink-label] .dashboard-toolbar__actions--list .dashboard-btn--text:not(.dashboard-btn--dense) {
+    display: none;
+  }
+}
+
+/* ── Scroll row (shortcut chips) ── */
+.dashboard-scroll-row {
+  flex-wrap: nowrap;
+  margin-inline: calc(-1 * var(--dash-gutter));
+  padding-inline: var(--dash-gutter);
+}
+
+@media (min-width: 768px) {
+  .dashboard-scroll-row {
+    margin-inline: 0;
+    padding-inline: 0;
+    flex-wrap: wrap;
+  }
+}
+
+/* ── Data tables ── */
+.dashboard-data-table-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--dash-space-2);
+  margin-bottom: var(--dash-space-2);
+  font-size: var(--dash-fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dash-accent);
+  opacity: 0.85;
+}
+
+@media (min-width: 768px) {
+  .dashboard-data-table-scroll-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-data-table {
+    min-width: 36rem;
+    font-size: var(--dash-fs-small);
+  }
+
+  .dashboard-table-wrap,
+  .dashboard-data-table-wrap--menus {
+    touch-action: pan-x pan-y;
+  }
+
+  .dashboard-data-table th,
+  .dashboard-data-table td {
+    padding: var(--dash-space-2);
+  }
+
+  .dashboard-data-table th {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Calendar module ── */
+@media (max-width: 767px) {
+  .calendar-module__panel .dashboard-panel--pad .dashboard-panel__body {
+    padding: var(--dash-space-2);
+  }
+
+  .calendar-legend {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: -0.25rem;
+    padding-inline: 0.25rem;
+  }
+
+  .calendar-legend::-webkit-scrollbar {
+    display: none;
+  }
+
+  .calendar-legend__item {
+    flex-shrink: 0;
+  }
+
+  .calendar-toolbar-compact .dashboard-toolbar__meta p:nth-child(2) {
+    font-size: var(--dash-fs-small);
+  }
+}
+
+/* ── Villa settings ── */
+@media (max-width: 767px) {
+  .villa-portfolio-card__rate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .villa-portfolio-card__rates {
+    width: 100%;
+  }
+
+  .villa-portfolio-card__actions {
+    flex-direction: row;
+  }
+
+  .villa-portfolio-card__actions .dashboard-btn {
+    flex: 1;
+  }
+}
+
+/* ── Module body ── */
+.dash-module__body {
+  min-width: 0;
+  width: 100%;
+}
+
+/* ── Buttons touch targets on coarse pointers ── */
+@media (pointer: coarse) {
+  .dashboard-btn--dense {
+    min-height: var(--dash-touch);
+  }
+
+  .dash-tab-bar__tab {
+    min-height: var(--dash-touch);
+    padding-inline: 0.85rem;
+  }
+}
+
+/* ── Dropdown — respect safe areas on notched phones ── */
+.dash-dropdown-menu {
+  max-height: min(70dvh, calc(100dvh - 2rem));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 639px) {
+  .dash-dropdown-menu {
+    max-width: min(18rem, calc(100vw - 1.5rem));
+  }
+}
+
+/* ── Empty states ── */
+@media (max-width: 639px) {
+  .dashboard-empty-state {
+    padding-inline: var(--dash-space-2);
+  }
+}
+
+/* ── Landscape phones — cap calendar height ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .calendar-module__panel {
+    min-height: min(38dvh, 16rem);
+  }
+
+  .dashboard-table-wrap {
+    min-height: min(32dvh, 14rem);
+  }
+}
+
+/* ── SEO manager ── */
+@media (max-width: 767px) {
+  .seo-overview__hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--dash-space-2) var(--dash-space-3);
+  }
+
+  .seo-overview__scores {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .seo-issue-group__header {
+    flex-wrap: wrap;
+    gap: var(--dash-space-2);
+  }
+}
+
+/* ── Media library ── */
+@media (max-width: 639px) {
+  .media-library-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: var(--dash-space-2);
+  }
+
+  .media-library-main {
+    padding: var(--dash-space-2);
+  }
+
+  .media-library-detail {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 50;
+    max-height: 70dvh;
+    overflow-y: auto;
+    border-radius: 12px 12px 0 0;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1099px) {
+  .media-library-body:has(.media-library-detail) {
+    grid-template-columns: 1fr;
+  }
+
+  .media-library-detail {
+    margin-top: var(--dash-space-2);
+  }
+}
+
+/* ── Booking folio ── */
+@media (max-width: 767px) {
+  .booking-folio .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-folio .dashboard-panel--pad .dashboard-panel__body {
+    padding: var(--dash-space-3);
+  }
+}
+
+/* ── Roles matrix ── */
+.dash-roles-table {
+  min-width: 36rem;
+}
+
+@media (max-width: 767px) {
+  .dash-roles-table {
+    font-size: var(--dash-fs-small);
+  }
+}
+
+/* ── Blog builder ── */
+@media (max-width: 1023px) {
+  .blog-builder-layout {
+    flex-direction: column;
+  }
+
+  .blog-builder-sidebar {
+    width: 100%;
+    max-width: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--dash-border);
+  }
+}
+
+/* ── Debug panel ── */
+.dash-debug-results .dashboard-panel__body {
+  padding: var(--dash-space-3) var(--dash-space-4);
+}
+
+/* ── Main scroll — avoid double scroll on landscape phones ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dashboard-main {
+    min-height: 0;
+  }
+
+  [data-page-scroll-root] {
+    max-height: calc(100dvh - var(--dash-header-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+/* ── Dev log explorers ── */
+.dash-log-viewer,
+.dashboard-log-detail {
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.dash-log-viewer pre,
+.dashboard-log-detail pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ── Sidebar section labels ── */
+.dashboard-sidebar__section-label {
+  color: var(--dash-text-muted);
+  letter-spacing: 0.12em;
+  font-size: 0.6875rem;
+}
+
+/* ── Toolbar meta — hide on narrow viewports ── */
+@media (max-width: 639px) {
+  .dashboard-toolbar__meta--hide-sm {
+    display: none;
+  }
+
+  .dash-filter-bar__actions-row .dashboard-btn--accent,
+  .dash-filter-bar__actions-row .dashboard-btn:not(.dashboard-btn--icon) {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboard-modal {
+    width: 100%;
+    max-width: none;
+    max-height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .dashboard-modal__body {
+    padding: var(--dash-modal-pad);
+    padding-bottom: max(var(--dash-modal-pad), env(safe-area-inset-bottom, 0px));
+  }
+
+  .dash-modal-header .dashboard-btn--icon {
+    min-height: var(--dash-touch);
+    min-width: var(--dash-touch);
+  }
+}
+
+@media (max-width: 639px) {
+  .blocks-manager__add .dashboard-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Property wizard — step rail scroll on narrow screens */
+@media (max-width: 1023px) {
+  .property-wizard__rail {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: -0.25rem;
+    padding-inline: 0.25rem;
+  }
+
+  .property-wizard__rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .property-wizard__rail button {
+    flex-shrink: 0;
+  }
+}
+
+/* Property wizard — step rail stacks */
+@media (max-width: 1023px) {
+  .property-wizard__layout {
+    flex-direction: column;
+  }
+
+  .property-wizard__rail {
+    width: 100%;
+    max-width: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--dash-border);
+  }
+
+  .property-wizard__footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    padding-bottom: max(var(--dash-space-3), env(safe-area-inset-bottom, 0px));
+    background: var(--dash-bg-elevated);
+    border-top: 1px solid var(--dash-border);
+  }
+}
+
+/* Housekeeping board — card stack */
+@media (max-width: 767px) {
+  .housekeeping-board__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .housekeeping-board__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .housekeeping-board__chips::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Booking folio — stack timeline */
+@media (max-width: 767px) {
+  .booking-folio__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booking-folio__actions .dashboard-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

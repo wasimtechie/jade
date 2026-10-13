@@ -1,0 +1,35 @@
+<svg width="426" height="23" viewBox="0 0 426 23" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+  <defs>
+    <!-- Single Greek-key unit (normalized); ~4% gap baked into pattern width -->
+    <path
+      id="meander-unit"
+      d="M0 17.569H13.4354V8.72135H8.1923V11.6706H10.1584V14.6198H4.5877V4.95291H17.04V17.569"
+    />
+    <!-- period = 426 / 24 tiles so the bar ends flush (seamless bg-repeat-x between SVG copies) -->
+    <pattern id="meander-repeat" width="17.75" height="23" patternUnits="userSpaceOnUse">
+      <use
+        href="#meander-unit"
+        stroke="#EFCD62"
+        stroke-width="2.25"
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+        fill="none"
+      />
+    </pattern>
+    <clipPath id="clip0_1182_2445">
+      <rect width="426" height="23" fill="white" />
+    </clipPath>
+  </defs>
+  <g
+    clip-path="url(#clip0_1182_2445)"
+    opacity="0.3"
+    stroke="#EFCD62"
+    stroke-width="2.25"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  >
+    <path d="M0 1H426" />
+    <path d="M0 22H426" />
+    <rect width="426" height="23" fill="url(#meander-repeat)" />
+  </g>
+</svg>

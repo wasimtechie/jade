@@ -1,0 +1,16 @@
+{
+  "source": "Axis Rooms property IDs supplied by Jade on 2026-10-13",
+  "properties": [
+    { "name": "Red Dome", "slug": "red-dome", "hotelId": "214546", "roomId": "383773", "ratePlanId": "292282" },
+    { "name": "Yellow Dome", "slug": "yellow-dome", "hotelId": "214547", "roomId": "383774", "ratePlanId": "292283" },
+    { "name": "Emerald", "slug": "emerald", "hotelId": "186189", "roomId": "312905", "ratePlanId": "252709" },
+    { "name": "Blue Dome", "slug": "blue-dome", "hotelId": "214545", "roomId": "383772", "ratePlanId": "292254" },
+    { "name": "Haven", "slug": "haven", "hotelId": "214548", "roomId": "383775", "ratePlanId": "292284" },
+    { "name": "Magnolia", "slug": "magnolia", "hotelId": "170948", "roomId": "303110", "ratePlanId": "241866" },
+    { "name": "Kintsugi", "slug": null, "hotelId": "215544", "roomId": "386976", "ratePlanId": "293982" },
+    { "name": "Tranquil woods", "slug": "tranquil", "hotelId": "170949", "roomId": "287676", "ratePlanId": "222336" },
+    { "name": "Retreat On the Ridge", "slug": "retreat-on-the-ridge", "hotelId": "186191", "roomId": "312907", "ratePlanId": "252711" },
+    { "name": "Jade 735", "slug": "jade-735", "hotelId": "170946", "roomId": "287678", "ratePlanId": "222338" },
+    { "name": "Lemon tree", "slug": "lemon-tree", "hotelId": "170945", "roomId": "287679", "ratePlanId": "222339" }
+  ]
+}
